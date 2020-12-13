@@ -3,11 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="486da3fd-3154-4057-9241-8d2f202c5c0f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/components/card.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/components/card.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/display/click_event.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/display/click_event.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/display/display_util.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/display/display_util.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/gameplay/gameplay.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/gameplay/gameplay.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
