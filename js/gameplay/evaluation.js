@@ -9,7 +9,8 @@ const MULTIPLIERS = {
     STRAIGHT: 3,
     FLUSH: 4,
     SF: 20,
-    FOUR: 10
+    FOUR: 10,
+    THREE: 1
 }
 
 function evaluate() {
@@ -18,6 +19,7 @@ function evaluate() {
     let flush = isFlush(cards);
     let straight = isStraight(cards);
     let four = fourOfKind(cards);
+    let three = threeOfKind(cards);
 
     if (flush && straight) {
         return MULTIPLIERS.SF;
@@ -27,6 +29,8 @@ function evaluate() {
         return MULTIPLIERS.STRAIGHT;
     } else if (four) {
         return MULTIPLIERS.FOUR;
+    } else if (three) {
+        return MULTIPLIERS.THREE;
     }
 
     return 0;
