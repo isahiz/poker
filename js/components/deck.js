@@ -8,14 +8,17 @@ function Deck() {
     let deck = [];
 
     deck.create = function() {
+        deck.splice(0, deck.length); // clears this
         for (let i = 0; i < Card.SUITS.length; i++) {
             let suit = Card.SUITS[i];
             for (let j = 0; j < Card.NUMS.length; j++) {
                 let n = Card.NUMS[j];
                 let link = IMG_DIR + "/" + n + suit + IMG_TYPE;
                 if (n == 'A' && suit == 'D') {
-                    link = IMG_DIR + "/" + suit + n + IMG_TYPE;
+                    link = IMG_DIR + "/x" + n + suit + IMG_TYPE;
                 } // this is a stupid fix idrk what to do about this yet
+                // since the card is just AD, ad blockers will prevent it from loading
+                // but renaming all the cards to match a different scheme is too much work
                 let c = new Card(suit, n, link);
                 deck.push(c);
             }

@@ -58,7 +58,6 @@ function replaceCard(id, newCard) {
 }
 
 function getCardCodeValueOfCellObject(td) {
-    console.log(td.childNodes[0].src.match(IMG_VALUE_REG)[0]);
     return td.childNodes[0].src.match(IMG_VALUE_REG)[0];
 }
 
