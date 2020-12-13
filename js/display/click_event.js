@@ -1,6 +1,7 @@
 
 function makeSelection() {
     replaceUserCards();
+    userCardSelection.clear();
     evaluate();
 }
 
@@ -14,7 +15,6 @@ function imageClickEvent(id) {
     setSelectedCardCellBorder(id);
 
     userCardSelection.set(id, getImageValuesById(id));
-    console.log(userCardSelection);
 }
 
 function getImageValuesById(id) {
