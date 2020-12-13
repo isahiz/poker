@@ -2,7 +2,7 @@
 const CARD_CELL_CLASS = "card_cell";
 const CARD_ROW_ID = "card_row";
 
-IMG_VALUE_REG = /[23456789AJKQ|"10"][CDHS]/;
+IMG_VALUE_REG = /([23456789AJKQ]|(10))[CDHS]/;
 
 function initTable() {
     let row = document.createElement("tr");
@@ -55,5 +55,6 @@ function replaceCard(id, newCard) {
 }
 
 function getCardCodeValueOfCellObject(td) {
+    console.log(td.childNodes[0].src.match(IMG_VALUE_REG)[0]);
     return td.childNodes[0].src.match(IMG_VALUE_REG)[0];
 }

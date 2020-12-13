@@ -2,7 +2,9 @@
 function makeSelection() {
     replaceUserCards();
     userCardSelection.clear();
-    evaluate();
+    let multiplier = evaluate();
+    console.log(multiplier);
+    displayContinueGame();
 }
 
 function imageClickEvent(id) {
