@@ -4,10 +4,16 @@ function makeSelection() {
     userCardSelection.clear();
     let multiplier = evaluate();
     console.log(multiplier);
-    displayContinueGame();
+    displayButton(CONTINUE_GAME);
+    hideButton(MAKE_SELECTION);
 }
 
 function imageClickEvent(id) {
+    let ms = document.getElementById(MAKE_SELECTION);
+    if (ms.style.display == 'none') {
+        return;
+    }
+
     if (userCardSelection.has(id)) {
         resetCardCellBorder(id);
         userCardSelection.delete(id);

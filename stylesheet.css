@@ -28,3 +28,9 @@ td {
 button {
     padding: 10px 30px 10px 30px;
 }
+
+#gameplay #pregame {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}

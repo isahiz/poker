@@ -15,7 +15,7 @@
 
 <body>
     <div class="content">
-        <h1>The Game of Poker</h1>
+        <h1>Poker!</h1>
         <div id ="game_messages">
             <!-- Messages for the players are stored here one at at time.-->
         </div>
@@ -39,7 +39,11 @@
         <table id="gameplay" style="display:none">
             <!-- Displayed after player hits Start -->
             <tr>
-                <td><button type="button" onclick="makeSelection()">Make selection</button></td>
+                <td><button type="button" id="make_selection" onclick="makeSelection()">Make selection</button></td>
+            </tr>
+
+            <tr>
+                <td><button type="button" id="continue_game" onclick="continueGame()" style="display: none">Continue game</button></td>
             </tr>
         </table>
     </div>
@@ -57,9 +61,6 @@
             initTable(window.deck);
         }
 
-        function continueGame() {
-
-        }
     </script>
 </body>
 

@@ -2,6 +2,9 @@
 const CARD_CELL_CLASS = "card_cell";
 const CARD_ROW_ID = "card_row";
 
+const CONTINUE_GAME = "continue_game";
+const MAKE_SELECTION = "make_selection";
+
 IMG_VALUE_REG = /([23456789AJKQ]|(10))[CDHS]/;
 
 function initTable() {
@@ -57,4 +60,24 @@ function replaceCard(id, newCard) {
 function getCardCodeValueOfCellObject(td) {
     console.log(td.childNodes[0].src.match(IMG_VALUE_REG)[0]);
     return td.childNodes[0].src.match(IMG_VALUE_REG)[0];
+}
+
+function displayButton(id) {
+    document.getElementById(id).style.display = "block";
+}
+
+function hideButton(id) {
+    document.getElementById(id).style.display = "none";
+}
+
+function clearTable() {
+    document.getElementById(CARD_ROW_ID).remove();
+}
+
+function continueGame() {
+    clearTable();
+    window.deck.create();
+    initTable(window.deck);
+    hideButton(CONTINUE_GAME);
+    displayButton(MAKE_SELECTION);
 }

@@ -47,7 +47,6 @@ function isFlush(cards) {
 
 function isStraight(cards) {
     let numArr = convertToSortedNumArray(cards);
-    console.log(numArr);
     let lastNum = numArr[0];
     for (let i = 1; i < numArr.length; i++) {
         if (numArr[i] != ++lastNum) {
