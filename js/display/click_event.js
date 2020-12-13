@@ -4,8 +4,9 @@ function makeSelection() {
     userCardSelection.clear();
     let multiplier = evaluate();
     console.log(multiplier);
-    displayButton(CONTINUE_GAME);
-    hideButton(MAKE_SELECTION);
+    removeTd(MAKE_SELECTION);
+    let td = createButtonTd(CONTINUE_GAME, function() {continueGame()}, "Continue game");
+    document.getElementById(BUTTON_TABLE).appendChild(td);
 }
 
 function imageClickEvent(id) {

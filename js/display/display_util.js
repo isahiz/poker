@@ -4,6 +4,7 @@ const CARD_ROW_ID = "card_row";
 
 const CONTINUE_GAME = "continue_game";
 const MAKE_SELECTION = "make_selection";
+const BUTTON_TABLE = "button_row";
 
 IMG_VALUE_REG = /([23456789AJKQ]|(10))[CDHS]/;
 
@@ -61,22 +62,21 @@ function getCardCodeValueOfCellObject(td) {
     return td.childNodes[0].src.match(IMG_VALUE_REG)[0];
 }
 
-function displayButton(id) {
-    document.getElementById(id).style.display = "block";
-}
-
-function hideButton(id) {
-    document.getElementById(id).style.display = "none";
-}
-
 function clearTable() {
     document.getElementById(CARD_ROW_ID).remove();
 }
 
-function continueGame() {
-    clearTable();
-    window.deck.create();
-    initTable(window.deck);
-    hideButton(CONTINUE_GAME);
-    displayButton(MAKE_SELECTION);
+function removeTd(id) {
+    document.getElementById(id).remove();
+}
+
+function createButtonTd(id, func, text) {
+    let td = document.createElement("td");
+    td.id = id
+    let button = document.createElement("button");
+    button.type = "button";
+    button.onclick = func;
+    button.textContent = text;
+    td.appendChild(button);
+    return td;
 }

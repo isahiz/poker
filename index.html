@@ -38,13 +38,11 @@
         </table>
         <table id="gameplay" style="display:none">
             <!-- Displayed after player hits Start -->
-            <tr>
-                <td><button type="button" id="make_selection" onclick="makeSelection()">Make selection</button></td>
+            <tr id="button_row">
+
             </tr>
 
-            <tr>
-                <td><button type="button" id="continue_game" onclick="continueGame()" style="display: none">Continue game</button></td>
-            </tr>
+
         </table>
     </div>
 
@@ -59,6 +57,17 @@
             let gameplay = document.getElementById("gameplay");
             gameplay.style.display = "block";
             initTable(window.deck);
+            let td = createButtonTd(MAKE_SELECTION, function() {makeSelection()}, "Make selection");
+            document.getElementById(BUTTON_TABLE).appendChild(td);
+        }
+
+        function continueGame() {
+            clearTable();
+            window.deck.create();
+            initTable(window.deck);
+            removeTd(CONTINUE_GAME);
+            let td = createButtonTd(MAKE_SELECTION, function() {makeSelection()}, "Make selection");
+            document.getElementById(BUTTON_TABLE).appendChild(td);
         }
 
     </script>
