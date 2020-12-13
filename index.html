@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>The Game of Poker</title>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+
+    <script src=".././poker/js/display/display_util.js"></script>
+    <script src=".././poker/js/display/click_event.js"></script>
+
+</head>
+
+<body>
+    <div class="content">
+        <h1>The Game of Poker</h1>
+        <div id ="game_messages">
+            <!-- Messages for the players are stored here one at at time.-->
+        </div>
+        <div id = "cards_display">
+            <table id="cards">
+                <script type = "module">
+                    import Deck from ".././poker/js/components/deck.js";
+                    window.deck = new Deck();
+                    console.log(window.deck.dealOne().image_link());
+                </script>
+            </table>
+        </div>
+        <table id="pregame">
+            <!-- Displayed before components starts -->
+            <tr>
+                <td><button type="button" onclick="startGame()">Start</button></td>
+            </tr>
+<!--            <tr>-->
+<!--                <td><button type="button" onclick="displayInstructions()">Directions</button></td>-->
+<!--            </tr>-->
+        </table>
+        <table id="gameplay" style="display:none">
+            <!-- Displayed after player hits Start -->
+            <tr>
+                <td><button type="button" onclick="makeSelection()">Make selection</button></td>
+            </tr>
+        </table>
+    </div>
+
+
+    <script type="text/javascript">
+        /**
+         * Starts the components of Set.
+         */
+        function startGame() {
+            let pregame = document.getElementById("pregame");
+            pregame.style.display = "none";
+            let gameplay = document.getElementById("gameplay");
+            gameplay.style.display = "block";
+            initTable(window.deck);
+        }
+    </script>
+</body>
+
+</html>

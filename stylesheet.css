@@ -1,0 +1,30 @@
+body {
+    font-family: sans-serif;
+}
+
+h1 {
+    font-size: 300%;
+}
+
+h1, #game_messages, #timer {
+    text-align: center;
+}
+
+.card_cell img {
+    width: 200px; /* you can use % */
+    height: auto;
+}
+
+#cards {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+
+td {
+    padding: 15px 15px;
+}
+
+button {
+    padding: 10px 30px 10px 30px;
+}
