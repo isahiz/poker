@@ -8,7 +8,7 @@ function Card(num, suit, img) {
     card.suit = suit;
     card.link = img;
 
-    card.image_link = function() {
+    card.imageLink = function() {
         return card.link;
     };
 

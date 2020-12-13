@@ -1,19 +1,21 @@
 // the css class of a card cell (td element)
 const CARD_CELL_CLASS = "card_cell";
+const CARD_ROW_ID = "card_row";
 
 IMG_VALUE_REG = /[23456789AJKQ|"10"][CDHS]/;
 
 function initTable() {
-    let cardTable = document.getElementById("cards");
     let row = document.createElement("tr");
-    cardTable.appendChild(row);
+    row.id = CARD_ROW_ID;
+    let card_table = document.getElementById("cards");
+    card_table.appendChild(row);
     for (let i = 0; i < 5; i++) {
         let card = window.deck.dealOne();
         let cardCell = document.createElement("td");
         cardCell.id = i.toString();
         cardCell.className = CARD_CELL_CLASS;
         row.appendChild(cardCell);
-        insertCardImage(cardCell.id, card.image_link());
+        insertCardImage(cardCell.id, card.imageLink());
     }
 }
 
@@ -44,4 +46,13 @@ function resetCardCellBorder(id) {
     if (cell != null && cell.hasAttribute("style")) {
         cell.removeAttribute("style");
     }
+}
+
+function replaceCard(id, newCard) {
+    let cell = document.getElementById(id);
+    if (cell.hasAttribute("style")) {
+        cell.removeAttribute("style");
+    }
+    cell.removeChild(cell.childNodes[0]);
+    insertCardImage(id, newCard.imageLink());
 }

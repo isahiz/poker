@@ -1,6 +1,6 @@
 
 function makeSelection() {
-
+    replaceUserCards();
 }
 
 function imageClickEvent(id) {
