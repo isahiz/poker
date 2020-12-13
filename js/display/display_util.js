@@ -50,9 +50,10 @@ function resetCardCellBorder(id) {
 
 function replaceCard(id, newCard) {
     let cell = document.getElementById(id);
-    if (cell.hasAttribute("style")) {
-        cell.removeAttribute("style");
-    }
     cell.removeChild(cell.childNodes[0]);
     insertCardImage(id, newCard.imageLink());
+}
+
+function getCardCodeValueOfCellObject(td) {
+    return td.childNodes[0].src.match(IMG_VALUE_REG)[0];
 }
